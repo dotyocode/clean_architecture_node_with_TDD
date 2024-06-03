@@ -1,6 +1,16 @@
 const { appError, Either } = require("../shared/errors");
 const cadastrarUsuarioUsecase = require("./cadastrar-usuario-usecase");
 
+const userMock = 
+  {
+    nome_completo: "Jhonathan Peres",
+    cpf: "12165718021",
+    telefone: "31998571830",
+    enedereco: "Rua helio de souza lima",
+    email: "dotyomusic@gmail.com",
+  };
+
+
 
 describe("Cadastrar usuario useCase", function () {
   const usuarioRepository = {
@@ -10,13 +20,7 @@ describe("Cadastrar usuario useCase", function () {
   };
 
   test("Deve poder cadastrar um usuario", async function () {
-    const usuarioDTO = {
-      nome_completo: "Jhonathan Peres",
-      cpf: "12165718021",
-      telefone: "31998571830",
-      enedereco: "Rua helio de souza lima",
-      email: "dotyomusic@gmail.com",
-    };
+    const usuarioDTO = userMock
 
     const sut = cadastrarUsuarioUsecase({ usuarioRepository });
     const output = await sut(usuarioDTO);
@@ -40,13 +44,7 @@ describe("Cadastrar usuario useCase", function () {
 
   test("Deve retornar um throw appError se cpf já existir", async function () {
     usuarioRepository.existCPF.mockResolvedValue(true);
-    const usuarioDTO = {
-      nome_completo: "Jhonathan Peres",
-      cpf: "12165718021",
-      telefone: "31998571830",
-      enedereco: "Rua helio de souza lima",
-      email: "dotyomusic@gmail.com",
-    };
+    const usuarioDTO = userMock
 
     const sut = cadastrarUsuarioUsecase({ usuarioRepository });
     const output = await sut(usuarioDTO)
@@ -60,13 +58,7 @@ describe("Cadastrar usuario useCase", function () {
   test("Deve retornar um throw appError se email já existir", async function () {
     usuarioRepository.existCPF.mockResolvedValue(false);
     usuarioRepository.existEmail.mockResolvedValue(true);
-    const usuarioDTO = {
-      nome_completo: "Jhonathan Peres",
-      cpf: "12165718021",
-      email: "dotyomusic@gmail.com",
-      telefone: "31998571830",
-      enedereco: "Rua helio de souza lima",
-    };
+    const usuarioDTO = userMock
 
     const sut = cadastrarUsuarioUsecase({ usuarioRepository });
     const output = await sut(usuarioDTO)
