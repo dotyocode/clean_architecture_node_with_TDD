@@ -1,9 +1,12 @@
-module.exports = class AppError extends Error {
+class AppError extends Error {
   constructor(message) {
     super(message);
-    this.message = message;
+    this.name = 'AppError';
   }
 
-  static dependencias = "Alguma dependencia obrigatoria não foi fornecida";
-  static parametrosObrigatorios = "Parametros obrigatórios ausentes";
-};
+  static dependencias = 'Dependências não fornecidas';
+  static parametrosObrigatorios = 'Parâmetros obrigatórios não fornecidos';
+  static cpfExiste = 'CPF já existe';
+}
+
+module.exports = AppError;

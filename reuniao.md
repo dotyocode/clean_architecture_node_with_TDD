@@ -13,8 +13,8 @@ livros para qualquer usuario, alem de buscar os registros de emprestimos.
 
 ## UseCases (Regra de négocio)
 
-- Cadastrar um novo usuario
-  - CPF ou emails devem ser unicos
+- Cadastrar um novo usuario [CHECKED]
+  - CPF ou emails devem ser unicos [CHECKED]
 
 - Buscar um cadastro de usuario por CPF
   - retornar um usuario ou vazio
