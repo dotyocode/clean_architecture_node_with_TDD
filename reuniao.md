@@ -16,7 +16,7 @@ livros para qualquer usuario, alem de buscar os registros de emprestimos.
 - Cadastrar um novo usuario [CHECKED]
   - CPF ou emails devem ser unicos [CHECKED]
 
-- Buscar um cadastro de usuario por CPF
+- Buscar um cadastro de usuario por CPF [CHECKED]
   - retornar um usuario ou vazio
 
 - Cadastrar um novo livro
