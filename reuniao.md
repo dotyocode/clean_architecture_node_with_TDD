@@ -17,10 +17,10 @@ livros para qualquer usuario, alem de buscar os registros de emprestimos.
   - CPF ou emails devem ser unicos [CHECKED]
 
 - Buscar um cadastro de usuario por CPF [CHECKED]
-  - retornar um usuario ou vazio
+  - retornar um usuario ou vazio [CHECKED]
 
-- Cadastrar um novo livro
-  - ISBN deve ser unico
+- Cadastrar um novo livro [CHECKED]
+  - ISBN deve ser unico [CHECKED]
 
 - Buscar um livro por nome ou ISBN
   - retornar um livro ou vazio
